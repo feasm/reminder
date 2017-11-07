@@ -58,7 +58,7 @@ public extension Collection where Indices.Iterator.Element == Index {
 public extension Collection where Index == Int, IndexDistance == Int {
 	
 	/// SwifterSwift: Random item from array.
-	public var randomItem: Generator.Element {
+    public var randomItem: Iterator.Element {
 		let index = Int(arc4random_uniform(UInt32(count)))
 		return self[index]
 	}

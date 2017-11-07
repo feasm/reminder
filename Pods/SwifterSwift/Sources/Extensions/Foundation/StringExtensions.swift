@@ -41,7 +41,7 @@ public extension String {
 	/// SwifterSwift: Array of characters of a string.
 	///
 	public var charactersArray: [Character] {
-		return Array(characters)
+		return Array(self)
 	}
 	
 	/// SwifterSwift: CamelCase of string.
@@ -50,7 +50,7 @@ public extension String {
 	///
 	public var camelCased: String {
 		let source = lowercased()
-		if source.characters.contains(" ") {
+		if source.contains(" ") {
 			let first = source.substring(to: source.index(after: source.startIndex))
 			let connected = source.capitalized.replacingOccurrences(of: " ", with: "")
 			let camel = connected.replacingOccurrences(of: "\n", with: "")
@@ -90,7 +90,7 @@ public extension String {
 	///		"".firstCharacterAsString -> nil
 	///
 	public var firstCharacterAsString: String? {
-		guard let first = characters.first else {
+		guard let first = self.first else {
 			return nil
 		}
 		return String(first)
@@ -135,7 +135,7 @@ public extension String {
 		let hasLetters = rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
 		let hasNumbers = rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
 		let comps = components(separatedBy: .alphanumerics)
-		return comps.joined(separator: "").characters.count == 0 && hasLetters && hasNumbers
+		return comps.joined(separator: "").count == 0 && hasLetters && hasNumbers
 	}
 	
 	/// SwifterSwift: Check if string is valid email format.
@@ -214,7 +214,7 @@ public extension String {
 	///		"".lastCharacterAsString -> nil
 	///
 	public var lastCharacterAsString: String? {
-		guard let last = characters.last else {
+		guard let last = self.last else {
 			return nil
 		}
 		return String(last)
@@ -233,7 +233,7 @@ public extension String {
 	///		"Hello world!".length -> 12
 	///
 	public var length: Int {
-		return characters.count
+		return self.count
 	}
 	
 	/// SwifterSwift: Array of strings separated by new lines.
@@ -253,7 +253,7 @@ public extension String {
 	///		"This is a test, since e is appearing everywhere e should be the common character".mostCommonCharacter -> "e"
 	///
 	public var mostCommonCharacter: String {
-		let mostCommon = withoutSpacesAndNewLines.characters.reduce([Character: Int]()) {
+		let mostCommon = withoutSpacesAndNewLines.reduce([Character: Int]()) {
 			var counts = $0
 			counts[$1] = ($0[$1] ?? 0) + 1
 			return counts
@@ -266,7 +266,7 @@ public extension String {
 	///		"foo".reversed -> "oof"
 	///
 	public var reversed: String {
-		return String(characters.reversed())
+		return String(self.reversed())
 	}
 	
 	/// SwifterSwift: Bool value from string (if applicable).
@@ -435,7 +435,7 @@ public extension String {
 	///
 	/// - Parameter i: index.
 	public subscript(safe i: Int) -> String? {
-		guard i >= 0 && i < characters.count else {
+		guard i >= 0 && i < self.count else {
 			return nil
 		}
 		return String(self[index(startIndex, offsetBy: i)])
@@ -454,7 +454,7 @@ public extension String {
 		guard let upperIndex = index(lowerIndex, offsetBy: range.upperBound - range.lowerBound, limitedBy: endIndex) else {
 			return nil
 		}
-		return self[lowerIndex..<upperIndex]
+        return String(self[lowerIndex..<upperIndex])
 	}
 	
 	/// SwifterSwift: Safely subscript string within a closed range.
@@ -470,7 +470,7 @@ public extension String {
 		guard let upperIndex = index(lowerIndex, offsetBy: range.upperBound - range.lowerBound + 1, limitedBy: endIndex) else {
 			return nil
 		}
-		return self[lowerIndex..<upperIndex]
+        return String(self[lowerIndex..<upperIndex])
 	}
 	
 	#if os(iOS) || os(macOS)
@@ -501,9 +501,9 @@ public extension String {
 	/// SwifterSwift: Check if string contains only unique characters.
 	///
 	public func hasUniqueCharacters() -> Bool {
-		guard self.characters.count > 0 else { return false }
+		guard self.count > 0 else { return false }
 		var uniqueChars = Set<String>()
-		for char in self.characters {
+		for char in self {
 			if uniqueChars.contains(String(char)) {
 				return false
 			}
@@ -568,7 +568,7 @@ public extension String {
 	/// - Parameter string: substring to search for.
 	/// - Returns: first index of substring in string (if applicable).
 	public func firstIndex(of string: String) -> Int? {
-		return Array(characters).map({String($0)}).index(of: string)
+		return Array(self).map({String($0)}).index(of: string)
 	}
 	
 	/// SwifterSwift: Latinize string.
@@ -587,20 +587,21 @@ public extension String {
 	///
 	/// - Parameter length: number of characters in string.
 	/// - Returns: random string of given length.
-	public static func random(ofLength length: Int) -> String {
-		guard length > 0 else { return "" }
-		let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-		return (0..<length).reduce("") {
-			let randomIndex = arc4random_uniform(UInt32(base.characters.count))
-			let randomCharacter = "\(base[base.index(base.startIndex, offsetBy: IndexDistance(randomIndex))])"
-			return $0.0 + randomCharacter
-		}
-	}
+//    public static func random(ofLength length: Int) -> String {
+//        guard length > 0 else { return "" }
+//        let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+//
+//        return (0..<length).reduce("") {
+//            let randomIndex = arc4random_uniform(UInt32(base.characters.count))
+//            let randomCharacter = "\(base[base.index(base.startIndex, offsetBy: IndexDistance(randomIndex))])"
+//            return $0.0 + randomCharacter
+//        }
+//    }
 	
 	/// SwifterSwift: Reverse string.
-	public mutating func reverse() {
-		self = String(characters.reversed())
-	}
+//    public mutating func reverse() {
+//        self = String(characters.reversed()
+//    }
 	
 	/// SwifterSwift: Sliced string from a start index with length.
 	///
@@ -869,9 +870,9 @@ public extension String {
 	///		String(randomOfLength: 10) -> "gY8r3MHvlQ"
 	///
 	/// - Parameter length: number of characters in string.
-	public init(randomOfLength length: Int) {
-		self = String.random(ofLength: length)
-	}
+//    public init(randomOfLength length: Int) {
+//        self = String.random(ofLength: length)
+//    }
 	
 }
 
@@ -886,7 +887,7 @@ public extension String {
 	#if os(macOS)
 	return NSMutableAttributedString(string: self, attributes: [NSFontAttributeName: NSFont.boldSystemFont(ofSize: NSFont.systemFontSize())])
 	#else
-	return NSMutableAttributedString(string: self, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
+        return NSMutableAttributedString(string: self, attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
 	#endif
 	}
 	#endif
@@ -894,20 +895,20 @@ public extension String {
 	/// SwifterSwift: Underlined string
 	///
 	public var underline: NSAttributedString {
-		return NSAttributedString(string: self, attributes: [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
+        return NSAttributedString(string: self, attributes: [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
 	}
 	
 	/// SwifterSwift: Strikethrough string.
 	///
 	public var strikethrough: NSAttributedString {
-		return NSAttributedString(string: self, attributes: [NSStrikethroughStyleAttributeName: NSNumber(value: NSUnderlineStyle.styleSingle.rawValue as Int)])
+        return NSAttributedString(string: self, attributes: [NSAttributedStringKey.strikethroughStyle: NSNumber(value: NSUnderlineStyle.styleSingle.rawValue as Int)])
 	}
 	
 	#if os(iOS)
 	/// SwifterSwift: Italic string.
 	///
 	public var italic: NSAttributedString {
-	return NSMutableAttributedString(string: self, attributes: [NSFontAttributeName: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
+        return NSMutableAttributedString(string: self, attributes: [NSAttributedStringKey.font: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
 	}
 	#endif
 	
@@ -925,7 +926,7 @@ public extension String {
 	/// - Parameter color: text color.
 	/// - Returns: a NSAttributedString versions of string colored with given color.
 	public func colored(with color: UIColor) -> NSAttributedString {
-		return NSMutableAttributedString(string: self, attributes: [NSForegroundColorAttributeName: color])
+        return NSMutableAttributedString(string: self, attributes: [NSAttributedStringKey.foregroundColor: color])
 	}
 	#endif
 	

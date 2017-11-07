@@ -35,7 +35,7 @@ public extension Int {
 	
 	/// SwifterSwift: Number of digits of integer value.
 	public var digitsCount: Int {
-		return String(self).characters.count
+		return String(self).count
 	}
 	
 	

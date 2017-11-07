@@ -155,7 +155,7 @@ public extension String {
 		guard let upperIndex = index(lowerIndex, offsetBy: range.upperBound - range.lowerBound, limitedBy: endIndex) else {
 			return nil
 		}
-		return self[lowerIndex..<upperIndex]
+        return String(self[lowerIndex..<upperIndex])
 	}
 	
 	@available(*, deprecated: 3.1.0, message: "Use subscript(safe range) instead")
@@ -172,6 +172,6 @@ public extension String {
 		guard let upperIndex = index(lowerIndex, offsetBy: range.upperBound - range.lowerBound + 1, limitedBy: endIndex) else {
 			return nil
 		}
-		return self[lowerIndex..<upperIndex]
+        return String(self[lowerIndex..<upperIndex])
 	}
 }

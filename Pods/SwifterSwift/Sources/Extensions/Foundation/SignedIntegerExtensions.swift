@@ -23,20 +23,20 @@ public extension SignedInteger {
 	}
 	
 	/// SwifterSwift: Array of digits of integer value.
-	public var digits: [Self] {
-		var digits: [Self] = []
-		for char in String(self).characters {
-			if let int = IntMax(String(char)) {
-				digits.append(Self(int))
-			}
-		}
-		return digits
-	}
+//    public var digits: [Self] {
+//        var digits: [Self] = []
+//        for char in String(self).characters {
+//            if let int = IntMax(String(char)) {
+//                digits.append(Self(int))
+//            }
+//        }
+//        return digits
+//    }
 	
 	/// SwifterSwift: Number of digits of integer value.
-	public var digitsCount: Int {
-		return String(self).characters.count
-	}
+//    public var digitsCount: Int {
+//        return String(self).characters.count
+//    }
 	
 	/// SwifterSwift: String of format (XXh XXm) from seconds Int.
 	public var timeString: String {

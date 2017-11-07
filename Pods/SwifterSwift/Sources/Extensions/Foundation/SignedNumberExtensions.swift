@@ -9,7 +9,7 @@
 import Foundation
 
 
-public extension SignedNumber {
+public extension SignedInteger {
 	
 	/// SwifterSwift: Absolute value of integer.
 	public var abs: Self {

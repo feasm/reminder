@@ -16,29 +16,29 @@
 // MARK: - Properties
 public extension NSAttributedString {
 	
-	#if os(iOS)
-	/// SwifterSwift: Bolded string.
-	public var bolded: NSAttributedString {
-		return applying(attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
-	}
-	#endif
-	
-	/// SwifterSwift: Underlined string.
-	public var underlined: NSAttributedString {
-		return applying(attributes: [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
-	}
-	
-	#if os(iOS)
-	/// SwifterSwift: Italicized string.
-	public var italicized: NSAttributedString {
-		return applying(attributes: [NSFontAttributeName: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
-	}
-	#endif
-	
-	/// SwifterSwift: Struckthrough string.
-	public var struckthrough: NSAttributedString {
-		return applying(attributes: [NSStrikethroughStyleAttributeName: NSNumber(value: NSUnderlineStyle.styleSingle.rawValue as Int)])
-	}
+//    #if os(iOS)
+//    /// SwifterSwift: Bolded string.
+//    public var bolded: NSAttributedString {
+//        return applying(attributes: [NSFontAttributeName.rawValue: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
+//    }
+//    #endif
+//
+//    /// SwifterSwift: Underlined string.
+//    public var underlined: NSAttributedString {
+//        return applying(attributes: [NSUnderlineStyleAttributeName.rawValue: NSUnderlineStyle.styleSingle.rawValue])
+//    }
+//
+//    #if os(iOS)
+//    /// SwifterSwift: Italicized string.
+//    public var italicized: NSAttributedString {
+//        return applying(attributes: [NSFontAttributeName.rawValue: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
+//    }
+//    #endif
+//
+//    /// SwifterSwift: Struckthrough string.
+//    public var struckthrough: NSAttributedString {
+//        return applying(attributes: [NSStrikethroughStyleAttributeName.rawValue: NSNumber(value: NSUnderlineStyle.styleSingle.rawValue as Int)])
+//    }
 }
 
 // MARK: - Methods
@@ -49,13 +49,13 @@ public extension NSAttributedString {
 	///
 	/// - Parameter attributes: Dictionary of attributes
 	/// - Returns: NSAttributedString with applied attributes
-	fileprivate func applying(attributes: [String: Any]) -> NSAttributedString {
-		let copy = NSMutableAttributedString(attributedString: self)
-		let range = (string as NSString).range(of: string)
-		copy.addAttributes(attributes, range: range)
-		
-		return copy
-	}
+//    fileprivate func applying(attributes: [String: Any]) -> NSAttributedString {
+//        let copy = NSMutableAttributedString(attributedString: self)
+//        let range = (string as NSString).range(of: string)
+//        copy.addAttributes(attributes, range: range)
+//
+//        return copy
+//    }
 	
 	#if os(macOS)
 	/// SwifterSwift: Add color to NSAttributedString.
@@ -70,9 +70,9 @@ public extension NSAttributedString {
 	///
 	/// - Parameter color: text color.
 	/// - Returns: a NSAttributedString colored with given color.
-	public func colored(with color: UIColor) -> NSAttributedString {
-		return applying(attributes: [NSForegroundColorAttributeName: color])
-	}
+//    public func colored(with color: UIColor) -> NSAttributedString {
+//        return applying(attributes: [NSForegroundColorAttributeName.rawValue: color])
+//    }
 	#endif
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65A275DC1FB1DFD9005259FF /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A275DB1FB1DFD9005259FF /* Calendar.storyboard */; };
+		65A275DE1FB1DFE4005259FF /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A275DD1FB1DFE4005259FF /* Location.storyboard */; };
+		65A275E01FB1DFEE005259FF /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A275DF1FB1DFEE005259FF /* Favorites.storyboard */; };
 		85FFDA119C392FC43877CCB9 /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57342D3B57A7B5EBE79BD419 /* Pods_Reminder.framework */; };
 		BCA66CEC1FB11C0100A4AE56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA66CEB1FB11C0100A4AE56 /* AppDelegate.swift */; };
 		BCA66CEE1FB11C0100A4AE56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA66CED1FB11C0100A4AE56 /* ViewController.swift */; };
@@ -17,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		57342D3B57A7B5EBE79BD419 /* Pods_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A275DB1FB1DFD9005259FF /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		65A275DD1FB1DFE4005259FF /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
+		65A275DF1FB1DFEE005259FF /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		BCA66CE81FB11C0100A4AE56 /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA66CEB1FB11C0100A4AE56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCA66CED1FB11C0100A4AE56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +63,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		65A275D41FB1D469005259FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCA66CEF1FB11C0100A4AE56 /* Main.storyboard */,
+				BCA66CF41FB11C0100A4AE56 /* LaunchScreen.storyboard */,
+				65A275DB1FB1DFD9005259FF /* Calendar.storyboard */,
+				65A275DD1FB1DFE4005259FF /* Location.storyboard */,
+				65A275DF1FB1DFEE005259FF /* Favorites.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65A275D51FB1D470005259FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCA66CED1FB11C0100A4AE56 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		65A275D61FB1D477005259FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BCA66CDF1FB11C0100A4AE56 = {
 			isa = PBXGroup;
 			children = (
@@ -79,10 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				BCA66CEB1FB11C0100A4AE56 /* AppDelegate.swift */,
-				BCA66CED1FB11C0100A4AE56 /* ViewController.swift */,
-				BCA66CEF1FB11C0100A4AE56 /* Main.storyboard */,
+				65A275D61FB1D477005259FF /* Model */,
+				65A275D41FB1D469005259FF /* View */,
+				65A275D51FB1D470005259FF /* Controller */,
 				BCA66CF21FB11C0100A4AE56 /* Assets.xcassets */,
-				BCA66CF41FB11C0100A4AE56 /* LaunchScreen.storyboard */,
 				BCA66CF71FB11C0100A4AE56 /* Info.plist */,
 			);
 			path = Reminder;
@@ -150,6 +183,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65A275DE1FB1DFE4005259FF /* Location.storyboard in Resources */,
+				65A275DC1FB1DFD9005259FF /* Calendar.storyboard in Resources */,
+				65A275E01FB1DFEE005259FF /* Favorites.storyboard in Resources */,
 				BCA66CF61FB11C0100A4AE56 /* LaunchScreen.storyboard in Resources */,
 				BCA66CF31FB11C0100A4AE56 /* Assets.xcassets in Resources */,
 				BCA66CF11FB11C0100A4AE56 /* Main.storyboard in Resources */,
@@ -357,7 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4XWMMXB4KD;
+				DEVELOPMENT_TEAM = 6QJFWMSLWU;
 				INFOPLIST_FILE = Reminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.age.Reminder;
@@ -373,7 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4XWMMXB4KD;
+				DEVELOPMENT_TEAM = 6QJFWMSLWU;
 				INFOPLIST_FILE = Reminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.age.Reminder;

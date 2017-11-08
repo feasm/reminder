@@ -16,6 +16,8 @@
 		BCA66CF11FB11C0100A4AE56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA66CEF1FB11C0100A4AE56 /* Main.storyboard */; };
 		BCA66CF31FB11C0100A4AE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA66CF21FB11C0100A4AE56 /* Assets.xcassets */; };
 		BCA66CF61FB11C0100A4AE56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA66CF41FB11C0100A4AE56 /* LaunchScreen.storyboard */; };
+		BCEB23DD1FB23F9200023E62 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEB23DC1FB23F9200023E62 /* CalendarViewController.swift */; };
+		BCEB23E01FB241BC00023E62 /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEB23DF1FB241BC00023E62 /* CalendarViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		BCA66CF51FB11C0100A4AE56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCA66CF71FB11C0100A4AE56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE34E388259D46126927814 /* Pods-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reminder/Pods-Reminder.release.xcconfig"; sourceTree = "<group>"; };
+		BCEB23DC1FB23F9200023E62 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		BCEB23DF1FB241BC00023E62 /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
 		C5A9B8B23835252B9F9071BD /* Pods-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reminder/Pods-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +82,7 @@
 		65A275D51FB1D470005259FF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BCEB23DE1FB2419900023E62 /* Calendar */,
 				BCA66CED1FB11C0100A4AE56 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -119,6 +124,15 @@
 				BCA66CF71FB11C0100A4AE56 /* Info.plist */,
 			);
 			path = Reminder;
+			sourceTree = "<group>";
+		};
+		BCEB23DE1FB2419900023E62 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				BCEB23DC1FB23F9200023E62 /* CalendarViewController.swift */,
+				BCEB23DF1FB241BC00023E62 /* CalendarViewCell.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCEB23DD1FB23F9200023E62 /* CalendarViewController.swift in Sources */,
 				BCA66CEE1FB11C0100A4AE56 /* ViewController.swift in Sources */,
+				BCEB23E01FB241BC00023E62 /* CalendarViewCell.swift in Sources */,
 				BCA66CEC1FB11C0100A4AE56 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,7 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6QJFWMSLWU;
+				DEVELOPMENT_TEAM = 4XWMMXB4KD;
 				INFOPLIST_FILE = Reminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.age.Reminder;
@@ -409,7 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6QJFWMSLWU;
+				DEVELOPMENT_TEAM = 4XWMMXB4KD;
 				INFOPLIST_FILE = Reminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.age.Reminder;
